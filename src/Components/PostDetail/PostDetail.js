@@ -65,7 +65,7 @@ const PostDetail = () => {
     //Getting id and API Dynamically
     const { postId } = useParams();
     const postUrl = `https://jsonplaceholder.typicode.com/posts/${postId}`;
-    
+
 
     //Single post data syncronization
     const [singlePost, setSinglePost] = useState({});
@@ -85,10 +85,8 @@ const PostDetail = () => {
             .then(res => res.json())
             .then(data => setComments(data))
     }, []);
-  
-    console.log(comments);
-    const singlePersonComment = comments.filter(comment=>comment.postId==postId);
-    console.log(singlePersonComment.length);
+
+    const singlePersonComment = comments.filter(comment => comment.postId == postId);
 
 
     const { body, id, title, userId } = singlePost;
@@ -143,10 +141,12 @@ const PostDetail = () => {
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <CardContent>
                             <Typography paragraph>Comments:</Typography>
-                            <Typography paragraph>
-                                {
-                                    singlePersonComment.map(userComment => <Comments userComment={userComment}></Comments>)
-                                }
+                            <Typography paragraph style={{display:'flex'}}>
+                                <div>
+                                    {
+                                        singlePersonComment.map(userComment => <Comments userComment={userComment}></Comments>)
+                                    }
+                                </div>
                             </Typography>
                         </CardContent>
                     </Collapse>

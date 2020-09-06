@@ -110,7 +110,7 @@ const Posts = (props) => {
                         <ShareIcon />
                     </IconButton>
                     <Button variant="contained" color="primary" href="#contained-buttons" onClick={()=>handleClick(id)}>
-        Link
+        Details
       </Button>
                 </CardActions>
                 

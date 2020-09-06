@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Comments.css';
 const Comments = (props) => {
-    console.log(props.userComment);
     const { postId, id, email, name, body } = props.userComment;
     return (
-        <div style={{display:'flex'}}>
-            <div className = 'main-section'>
+        <div style={{ display: 'flex', margin: '20px' }}>
+            <div className='main-section'>
+                <h2>ID:{id}</h2>
+                <h4>PostId: {postId}</h4>
+                <small>Name:{name}</small>
                 <p>{body}</p>
-    <small>{email}</small>
-            </div>
-            <div className='image-section'>
-                <p>image</p>
+                <small>{email}</small>
             </div>
         </div>
     );
