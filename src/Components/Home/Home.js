@@ -13,7 +13,7 @@ const Home = () => {
         .then(data=>setPost(data))
     },[]);
     return (
-        <div>
+        <div> 
             {
                 post.map(pst=><Posts post={pst}></Posts>)
             }
